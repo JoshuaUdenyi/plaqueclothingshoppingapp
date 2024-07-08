@@ -33,11 +33,8 @@ class ProductViewModel @Inject constructor() : ViewModel() {
     data class ErrorState(val state: Boolean = false, val message: String = "")
 
     sealed class UiEvent {
-        data class ShowSnackbar(val message: String) : UiEvent()
-
         data object Loading : UiEvent()
         data object Success : UiEvent()
-
     }
 
 

@@ -27,14 +27,12 @@ class ViewProductDetailsViewModel @Inject constructor(private val savedStateHand
 
     private var productPrice: String = ""
     private var productId: String = ""
-    private val productStateFlow = MutableStateFlow<Product>(Product())
+    private val productStateFlow = MutableStateFlow(Product())
     val productState: StateFlow<Product> = productStateFlow
 
     private val productLoadingFlow = MutableStateFlow(true)
     val productloading: StateFlow<Boolean> = productLoadingFlow
 
-    private val retryStateFlow = MutableStateFlow(true)
-    val retryState: StateFlow<Boolean> = retryStateFlow
 
     private val productErrorFlow = MutableStateFlow(ErrorState())
     val productError: StateFlow<ErrorState> = productErrorFlow
