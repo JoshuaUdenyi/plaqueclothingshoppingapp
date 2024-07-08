@@ -1,4 +1,4 @@
-package com.codesultan.plaqueclothing.ui
+package com.codesultan.plaqueclothing.ui.screens
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box

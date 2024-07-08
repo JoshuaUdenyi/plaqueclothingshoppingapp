@@ -1,4 +1,4 @@
-package com.codesultan.plaqueclothing.ui
+package com.codesultan.plaqueclothing.ui.screens
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope

@@ -6,8 +6,8 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
-import com.codesultan.plaqueclothing.ui.HomeScreen
-import com.codesultan.plaqueclothing.ui.ViewProductDetail
+import com.codesultan.plaqueclothing.ui.screens.HomeScreen
+import com.codesultan.plaqueclothing.ui.screens.ViewProductDetail
 
 
 @Composable

@@ -1,4 +1,4 @@
-package com.codesultan.plaqueclothing.ui
+package com.codesultan.plaqueclothing.ui.screens
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -34,14 +34,12 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import coil.compose.AsyncImage
-import com.codesultan.plaqueclothing.R
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -107,7 +105,7 @@ fun ProductListContent(
 
         ) {
 
-        items(value.size) { shoeItem ->
+        items(value.size) { clothingItems ->
 
             Column(
                 horizontalAlignment = Alignment.Start,
@@ -117,22 +115,22 @@ fun ProductListContent(
                     modifier = Modifier
                         .padding(8.dp)
                         .clickable(onClick = {
-                            navController.navigate("details" + "?id=${value[shoeItem].id}&price=${value[shoeItem].currentPrice[0].NGN[0].toString()}")
+                            navController.navigate("details" + "?id=${value[clothingItems].id}&price=${value[clothingItems].currentPrice[0].NGN[0].toString()}")
                         }), shape = RoundedCornerShape(8.dp)
                 ) {
                     AsyncImage(
                         modifier = Modifier
                             .aspectRatio(1f)
                             .clip(shape = RoundedCornerShape(8.dp)),
-                        model = "https://api.timbu.cloud/images/${value[shoeItem].photos[0].url}",
+                        model = "https://api.timbu.cloud/images/${value[clothingItems].photos[0].url}",
                         contentDescription = null,
                     )
 
                 }
-                Row(
+                Column(
                     modifier = Modifier.fillMaxWidth(),
-                    horizontalArrangement = Arrangement.Start,
-                    verticalAlignment = Alignment.CenterVertically
+                    horizontalAlignment = Alignment.Start,
+                    verticalArrangement = Arrangement.Center
                 ) {
                     Column(
                         modifier = Modifier.padding(start = 4.dp),
@@ -140,28 +138,34 @@ fun ProductListContent(
                         horizontalAlignment = Alignment.Start
                     ) {
                         Text(
-                            text = value[shoeItem].name,
+                            text = value[clothingItems].name,
                             style = MaterialTheme.typography.headlineSmall,
                             overflow = TextOverflow.Ellipsis,
                             maxLines = 1,
                             modifier = Modifier.size(width = 124.dp, height = 32.dp)
                         )
-                        Text(
-                            text = value[shoeItem].currentPrice[0].NGN[0].toString() + " NGN",
-                            style = MaterialTheme.typography.bodyMedium,
-                            overflow = TextOverflow.Ellipsis,
-                            maxLines = 1
-                        )
+                        Row(
+                            verticalAlignment = Alignment.CenterVertically,
+                            horizontalArrangement = Arrangement.Center
+                        ) {
+                            Text(
+                                text = value[clothingItems].currentPrice[0].NGN[0].toString() + " NGN",
+                                style = MaterialTheme.typography.bodyMedium,
+                                overflow = TextOverflow.Ellipsis,
+                                maxLines = 1
+                            )
+                            IconButton(onClick = {
+                                navController.navigate("details" + "?id=${value[clothingItems].id}&price=${value[clothingItems].currentPrice[0].NGN[0].toString()}")
+                            }) {
+                                Icon(
+                                    imageVector = Icons.Default.ShoppingCart,
+                                    contentDescription = ""
+                                )
+                            }
+                        }
+
                     }
 
-                    IconButton(onClick = {
-                        navController.navigate("details" + "?id=${value[shoeItem].id}&price=${value[shoeItem].currentPrice[0].NGN[0].toString()}")
-                    }) {
-                        Icon(
-                            imageVector = Icons.Default.ShoppingCart,
-                            contentDescription = ""
-                        )
-                    }
                 }
 
                 Spacer(modifier = Modifier.padding(bottom = 16.dp))
