@@ -64,9 +64,6 @@ fun ProductListContent(
 
     val value = productViewModel.productsState.collectAsState().value
 
-    var errorMessage: String = ""
-
-
     val retry = remember {
         mutableStateOf(false)
     }
