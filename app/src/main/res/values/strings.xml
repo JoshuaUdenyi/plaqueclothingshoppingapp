@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">PlaqueClothing</string>
+    <string name="shoppingcart">ShoppingCart</string>
+    <string name="productimage">ProductImage</string>
+</resources>
