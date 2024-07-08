@@ -37,7 +37,7 @@ for fashion enthusiasts.
 
 
 ### **APK Download**
-Download the latest APK from here:[ google drive](https://drive.google.com/file/d/1rg7iKRL7ML14O95q_39ATx_zmyLnkjM1/view?usp=sharing)
+Download the latest APK from here:[google drive](https://drive.google.com/file/d/1rg7iKRL7ML14O95q_39ATx_zmyLnkjM1/view?usp=sharing)
 
 ### **Link to Test on Appetize**
-Click here to test on Appetize: [appetize link](https://appetize.io/app/b_7f44jri6e5oivdhbikwip2yw4y)
+Click here to test on Appetize: [appetize link](https://appetize.io/app/b_3pcf7qs62gbcsecy6a47tntnri)
